@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MayDay Editor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <script type="text/javascript" src="../script/jquery-2.1.0.js"></script>
+    <script src="../script/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../script/menu.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="screen">
+        body {
+            overflow: hidden;
+            background-color: #394034;
+        }
+        #editor { 
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #statusBar {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0;
+            background-color: rgb(245, 245, 245);
+            color: gray;
+        }
+        .ace_status-indicator {
+            color: gray;
+            position: absolute;
+            right: 0;
+            border-left: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <input style="display:none;" id="fileDialogSave" type="file" nwsaveas />
+    <input style="display:none;" id="fileDialogOpen" type="file" />
+    <div id="editor"></div>
+    <!-- <div id="statusBar">Coding.</div> -->
+    <!-- load ace -->
+    <script src="../build/src-noconflict/ace.js"></script>
+    <script src="../build/src-noconflict/ext-language_tools.js"></script>
+    <script src="../build/src-noconflict/ext-statusbar.js"></script>
+    <script src="../build/src-noconflict/ext-settings_menu.js"></script>
+    <script>
+        // trigger extension
+        ace.require("ace/ext/language_tools");
+        ace.require('ace/ext/settings_menu').init(editor);
+        var editor = ace.edit("editor");
+        // var StatusBar = ace.require('ace/ext/statusbar').StatusBar;
+        // var statusBar = new StatusBar(editor, document.getElementById('statusBar'));
+        editor.session.setMode("ace/mode/c_cpp");
+        editor.setTheme("ace/theme/monokai");
+        // enable autocompletion and snippets
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true
+        });
+    </script>
+
+    <script src="../script/title.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../script/key.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../script/load.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
