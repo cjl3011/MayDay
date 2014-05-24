@@ -1,8 +1,9 @@
-MayDay-Editor
-===========
+###MayDay-Editor
 
+####Idea 
+探索
 
-###Contributor: 
+####Contributor: 
 + Lellansin
 + Loveice
 + Kangle Yu
