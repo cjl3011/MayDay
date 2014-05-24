@@ -32,7 +32,8 @@ filemenu.submenu.append(new gui.MenuItem({
 	label: '新建 (&N)',
 	click: function() {
 		editor.window.setTitleEmpty();
-		editor.initValue('');
+		//editor.initValue('');
+		editor.setValue('');
 		$('#fileDialogSave').attr("file", '');
 	}
 }));
