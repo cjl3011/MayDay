@@ -8,6 +8,14 @@
 // Initial Setup
 // -------------
 
+var listener = function(dom) {
+  dom.keydown(function(){
+    console("has keydown");
+  });
+}
+
+
+
 
 (function() {
 
@@ -16,6 +24,16 @@
   var root = this;
   var Selearn;
   Selearn.VERSION = '0.0.1';
+
+  // kibo call
+  var k = Kibo();
+  
   
   
 }).call(this);
+
+
+
+
+
+
