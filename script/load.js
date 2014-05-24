@@ -16,7 +16,11 @@ var path = require('path');
 // });
 
 $(document).ready(function() {
-	var filepath = path.join(process.env.TEMP, 'nw_mayday_editor.tmp');
+  try {
+	  var filepath = path.join(process.env.TEMP, 'nw_mayday_editor.tmp');
+  } catch(e) {
+	  var filepath = path.join('/tmp', 'nw_mayday_editor.tmp');
+  }
 	open(filepath, function(err, data) {
 		if (err) {
 			console.log(err);

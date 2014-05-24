@@ -147,7 +147,13 @@ function openFile() {
 		    editor.session.setMode(mode);
 
 			$('#fileDialogSave').attr("file", filepath);
-			fs.writeFile(path.join(process.env.TEMP, 'nw_mayday_editor.tmp'), filepath, function(err) {
+      try {
+	      var tmpdir = path.join(process.env.TEMP, 'nw_mayday_editor.tmp');
+      } catch(e) {
+	      var tmpdir= path.join('/tmp', 'nw_mayday_editor.tmp');
+      }
+			//fs.writeFile(path.join(process.env.TEMP, 'nw_mayday_editor.tmp'), filepath, function(err) {
+			fs.writeFile(tmpdir, filepath, function(err) {
 				if (err) {
 					alert(err);
 				}
