@@ -138,7 +138,8 @@ function openFile() {
 		if (exist) {
 			editor.window.setTitle(filepath);
 			fs.readFile(filepath, "utf8", function(err, data) {
-				editor.initValue(data);
+				//editor.initValue(data);
+				editor.setValue(data);
 				editor.moveCursorTo(0, 0);
 			});
 			
