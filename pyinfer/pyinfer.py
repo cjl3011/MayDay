@@ -1,7 +1,11 @@
 # auther: Loveice
 # coding: utf-8
-# For Lastmayday
+# file: pyinfer.py
+# for my friend lastmayday:)
+"""
+Basic type checking
 
+"""
 
 import sys
 from src.typed_ast.typed_ast import *
