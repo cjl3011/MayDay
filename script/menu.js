@@ -33,7 +33,7 @@ filemenu.submenu.append(new gui.MenuItem({
 	click: function() {
 		editor.window.setTitleEmpty();
 		//editor.initValue('');
-		editor.setValue('');
+		editor.setValue('我是 lowbi');
 		$('#fileDialogSave').attr("file", '');
 	}
 }));
@@ -97,6 +97,35 @@ menubar.append(setting);
 // 		});
 // 	}
 // }));
+
+// 创建一个菜单项
+var utilmenu = new gui.MenuItem({
+	type: "normal",
+	label: "工具 (&L)"
+});
+
+utilmenu.submenu = new gui.Menu();
+utilmenu.submenu.append(new gui.MenuItem({
+	label: '类型检查',
+	click: function() {
+    var exec = require('child_process').exec;
+	  fs.writeFile('./pyinfer/src/tests/editor.py', editor.getValue(), function(err) {
+      exec('cd pyinfer; python2 pyinfer.py src/tests/editor.py', function(err, stdout, stderr) {
+        editor.setValue(editor.getValue() + '\n\n======================================\n' +stdout);
+        /*
+        editor.getSession().setAnnotations([{
+          row:1,
+          column: 10,
+          text: 'sytax erro',
+          type: 'error'
+        }]);
+        */
+      });
+    });
+	}
+}));
+
+menubar.append(utilmenu);
 
 // 创建一个菜单项
 var helpmenu = new gui.MenuItem({
