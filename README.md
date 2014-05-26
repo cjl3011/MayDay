@@ -1,7 +1,7 @@
 ###MayDay-Editor
 
-####Idea 
-探索
+Next Generation Editor! 
+
 
 ####Contributor: 
 + Lellansin
