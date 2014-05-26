@@ -19,7 +19,7 @@ def main(argv):
 
 def usage():
     print("Usage:")
-    print("python infer.py source")
+    print("python pyinfer.py filename")
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
